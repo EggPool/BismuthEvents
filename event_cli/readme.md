@@ -12,7 +12,7 @@ WIP
 * sqlite3 should be the only "exotic" required module.  
 * needs a node to connect to, with access rights to the newest 'API_' features.
 
-# Config
+# Config
 
 * `event_cli.default.conf` is the default cofig file, that comes with the release. It's *noy* to be modified
 * create a `event-cli.conf` file and override your custom settings there if needed. 
@@ -23,7 +23,7 @@ Run `python3 event_cli.py --watch`
 
 Run naked for usage:
 
-# Command line
+# Command line
 
 usage: event_cli.py [-h] [-v] [--follow FOLLOW] [--unfollow UNFOLLOW] [--list] [--watch]
 
