@@ -8,6 +8,7 @@ prototype:
 event:xxx:event_name:optional_data
 
 xxx is a 3 letters event command.
+event_name is 3 letters long minimum
 
 # EVENTS COMMANDS
 
