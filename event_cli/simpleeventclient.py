@@ -170,7 +170,8 @@ class SimpleEvent:
         :return:
         """
         event = self._validate_event(tx)
-        print(event)
+        if self.config.verbose:
+            print(event)
         if event:
             if event['cmd'] == 'msg':
                 # save message in db if followed or saving all
