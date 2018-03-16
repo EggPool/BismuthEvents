@@ -161,6 +161,22 @@ class EventDB:
             res = res.split(',')
         return res
 
+    def get_rewinded_events(self, following, rewind=10):
+        """
+        Generator: list of stored events
+        :param following: list of events to fetch
+        :param rewind: how many old events to fetch from the db
+        :return:
+        """
+        nb = ['?' for _ in following]
+        self._db_execute_param('select * from events where event in ('+','.join(nb)+') order by timestamp desc limit ?',
+                               tuple(following)+(rewind,))
+        res = self.cursor.fetchone()
+        while res:
+            res = {"event": res[0], "ts": res[1], "sig": res[2], "data": res[3]}
+            yield(res)
+            res = self.cursor.fetchone()
+
     def set_owner(self, event_name, owner, timestamp):
         """
         Records new owner event

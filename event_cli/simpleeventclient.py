@@ -103,7 +103,8 @@ class SimpleEvent:
             if self.config.verbose:
                 print("Already watching")
             return True
-        # TODO: rewind
+        for event in self.event_db.get_rewinded_events(self.following, 10):
+            self.display_event(event)
         self.watching_event.set()
         if self.config.verbose:
             print("Watching On")
