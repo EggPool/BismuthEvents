@@ -1,4 +1,4 @@
-# What is Event Sourcing?
+# What is Event Sourcing?
 
 It's an object/data model that stores the *events* leading to the current state of objects, rather than the *current state* itself.
 
@@ -28,15 +28,15 @@ Perfect fit, since
 
 Way too complex and eth-related to be of use for Bismuth, but some info to understand the context.
 
-## Some more pointers
+## Some more pointers
 
-https://dzone.com/articles/5-great-points-why-you-use-event-sourcing-1
-http://microservices.io/patterns/data/event-sourcing.html
-http://microservices.io/patterns/data/cqrs.html
-https://msdn.microsoft.com/en-us/library/jj591559.aspx
-http://cqrs.nu/Faq/event-sourcing
-https://news.ycombinator.com/item?id=12627944
-https://dapp.transmute.industries/
+https://dzone.com/articles/5-great-points-why-you-use-event-sourcing-1  
+http://microservices.io/patterns/data/event-sourcing.html  
+http://microservices.io/patterns/data/cqrs.html  
+https://msdn.microsoft.com/en-us/library/jj591559.aspx  
+http://cqrs.nu/Faq/event-sourcing  
+https://news.ycombinator.com/item?id=12627944  
+https://dapp.transmute.industries/  
 
 ## Related Projects or tools
 
