@@ -169,8 +169,12 @@ class EventDB:
         :return:
         """
         nb = ['?' for _ in following]
-        self._db_execute_param('select * from events where event in ('+','.join(nb)+') order by timestamp desc limit ?',
+        # Use of a temp table to get the last, but order them in ascending order.
+        # Allows to do the job on the db side, and fetching the rows one by one in python for the generator.
+        self._db_execute_param('select * from (select * from events where event in ('+','.join(nb)+') order by timestamp desc limit ?) temp order by timestamp asc;',
                                tuple(following)+(rewind,))
+        # If we only store the followed and not all, we could use like
+        # SELECT * FROM mytable LIMIT 10 OFFSET (SELECT COUNT(*) FROM mytable)-10;
         res = self.cursor.fetchone()
         while res:
             res = {"event": res[0], "ts": res[1], "sig": res[2], "data": res[3]}
