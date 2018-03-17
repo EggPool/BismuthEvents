@@ -14,9 +14,9 @@ import time
 import argparse
 
 # custom modules
+sys.path.append('../modules')
 import eventconfig
 from simpleeventclient import SimpleEvent
-
 
 
 __version__ = "0.0.2"

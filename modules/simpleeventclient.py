@@ -40,7 +40,7 @@ class SimpleEvent:
             self.watching_event = threading.Event()
             node_ip, node_port = self.config.bismuthnode.split(":")
             self.connection = Connection((node_ip, int(node_port)), verbose=config.verbose)
-            self.event_db = EventDB(verbose=config.verbose)
+            self.event_db = EventDB(verbose=config.verbose, db_path=config.db_path)
             self.last_height = self.event_db.get_status('last_height')  # no event before
             if not self.last_height:
                 self.last_height = 556780  # no event before
@@ -261,7 +261,7 @@ class SimpleEvent:
         # Give it some time to start and do things
         time.sleep(2)
         # a db object local to this thread
-        self.event_db_watch = EventDB(verbose=self.config.verbose)
+        self.event_db_watch = EventDB(verbose=self.config.verbose, db_path=self.config.db_path)
         while not self.stop_event.is_set():
             self._poll()
             self._ping_if_needed()

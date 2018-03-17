@@ -11,12 +11,14 @@ __version__ = '0.0.1'
 class Get:
     
     # "param_name":["type"] or "param_name"=["type","property_name"]
-    vars = {"bismuthnode": ["str"], "loglevel": ["str"], "verbose": ["int"], "registrar": ["str"], "follow": ["str"]}
+    vars = {"bismuthnode": ["str"], "loglevel": ["str"], "verbose": ["int"], "registrar": ["str"], "follow": ["str"], "db_path": ["str"]}
  
-    def __init__(self):
+    def __init__(self, base_name='event_cli'):
         self.verbose = 0
         self.bismuthnode = "127.0.0.1"
         self.registrar = 'any'
+        self.db_path = '.data'
+        self.base_name = base_name
         self.read()
  
     def load_file(self, filename):
@@ -42,10 +44,10 @@ class Get:
                     
     def read(self):
         # first of all, load from default config so we have all needed params
-        self.load_file("event_cli.default.conf")
+        self.load_file(self.base_name+".default.conf")
         # then override with optional custom config
-        if path.exists("event_cli.conf"):
-            self.load_file("event_cli.conf")
+        if path.exists(self.base_name+".conf"):
+            self.load_file(self.base_name+".conf")
         # TODO: raise error if missing critical info like bismuth node
         # Better : raise in the client class, where we need it.
         if self.verbose:

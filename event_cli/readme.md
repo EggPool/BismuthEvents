@@ -14,8 +14,8 @@ WIP
 
 # Config
 
-* `event_cli.default.conf` is the default cofig file, that comes with the release. It's *noy* to be modified
-* create a `event-cli.conf` file and override your custom settings there if needed. 
+* `event_cli.default.conf` is the default config file, that comes with the release. It's *not* to be modified
+* create a `event_cli.conf` file and override your custom settings there if needed. 
 
 # How to use
 
