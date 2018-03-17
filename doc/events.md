@@ -5,23 +5,23 @@ No impact on hyper size or balance.
 Event commands are specified via openfield data.
 
 prototype:  
-event:xxx:event_name:optional_data
+`event:xxx:event_name:optional_data`
 
 xxx is a 3 letters event command.
-event_name is 3 letters long minimum
+event_name is 3 letters long minimum.
 
 # EVENTS COMMANDS
 
-## Main commands
+## Main commands
 
 ### reg
 Register an event.  
 `event:reg:Egg`
 
-###msg
-Emit an event (can be anything, including binary, z85 encoded).  
-> Message could be encrypted (with sender privkey or another one)  
-`event:msg:Egg:Z85ENCODEDPAYLOAD`
+### msg
+Emit an event (can be anything, including binary, z85 encoded).    
+`event:msg:Egg:Z85ENCODEDPAYLOAD`  
+> Message could be encrypted (with sender privkey or another one)
 
 ## Rights management commands
 
@@ -40,15 +40,15 @@ Remove source rights from someone.
 
 ## Additionnal commands
 
-# dsc
+### dsc
 Add or change event description (only text allowed here).  
 `event:dsc:Egg:Info and stats about EggPool Mining pool`
 
-# icn
+### icn
 Attach an icon/avatar (size/format to be spec, like 128x128png).    
 `event:icn:Egg:Z85bin`
 
-#typ
+### typ
 Add or change event mime-type (default is text/plain).  
 `event:typ:Egg:text/html|image/png`  
 or custom types:  
