@@ -2,7 +2,7 @@
 
 Current state is pretty much a functional Proof Of Concept.
 
-## Current features
+## Current features
 
 * Working protocol on top of bis/openfield
 * basic right management (registration of event, publishing rights)
@@ -21,7 +21,7 @@ Current state is pretty much a functional Proof Of Concept.
 * Concept of registrar  
 * Virtual database/tables and read models, see [What is event sourcing](What_is_event_sourcing.md)
 
-## Planned apps
+## Planned apps
 
 ### Simple ticker/info feeds
 
@@ -31,7 +31,7 @@ Current state is pretty much a functional Proof Of Concept.
 ### More automation
 
 * IFTTT integration
-* Other third part services?
+* Other third party services?
 
 ### More
 
